@@ -1,0 +1,310 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.page.data-v-79e6a490 {
+  min-height: 100vh;
+  background: #f3f5f9;
+  padding-bottom: 40rpx;
+}
+.profile-card.data-v-79e6a490 {
+  padding: 40rpx 30rpx 20rpx;
+  background: linear-gradient(180deg, #3D7EFF 0%, #EDF3FF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  /* 确保子元素的绝对定位基于此容器 */
+}
+.arrow-icon.data-v-79e6a490 {
+  position: absolute;
+  right: 20rpx;
+  /* 调整箭头距离右侧的间距 */
+  top: 50%;
+  /* 垂直居中 */
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50rpx;
+  height: 50rpx;
+}
+.avatar.data-v-79e6a490 {
+  position: relative;
+  width: 96rpx;
+  /* 标准头像尺寸 */
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 48rpx;
+  overflow: hidden;
+}
+.profile-info.data-v-79e6a490 {
+  flex: 1;
+  margin-left: 24rpx;
+  /* 增加头像与信息之间的间距 */
+  color: #fff;
+  text-align: left;
+  /* 左对齐文字，更接近原始风格 */
+}
+.greeting.data-v-79e6a490 {
+  font-size: 30rpx;
+  font-weight: 600;
+  line-height: 34rpx;
+}
+.subtext.data-v-79e6a490 {
+  font-size: 22rpx;
+  opacity: 0.9;
+  margin-top: 8rpx;
+}
+.login-btn.data-v-79e6a490 {
+  padding: 12rpx 26rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18rpx;
+  color: #3D7EFF;
+  font-size: 26rpx;
+  font-weight: 500;
+  box-shadow: 0 6rpx 18rpx rgba(61, 126, 255, 0.12);
+}
+.stats-section.data-v-79e6a490 {
+  margin: 20rpx 30rpx 0;
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 16rpx rgba(17, 32, 64, 0.06);
+  display: flex;
+  justify-content: space-between;
+}
+.stats-item.data-v-79e6a490 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.stats-value.data-v-79e6a490 {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #111;
+}
+.stats-label.data-v-79e6a490 {
+  font-size: 24rpx;
+  color: #7A8499;
+  margin-top: 8rpx;
+}
+.filter-bar.data-v-79e6a490 {
+  margin: 30rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 16rpx;
+  box-shadow: 0 12rpx 24rpx rgba(17, 32, 64, 0.04);
+  display: flex;
+  overflow-x: auto;
+}
+.filter-bar.data-v-79e6a490::-webkit-scrollbar {
+  display: none;
+}
+.filter-item.data-v-79e6a490 {
+  flex-shrink: 0;
+  padding: 12rpx 24rpx;
+  font-size: 26rpx;
+  color: #7A8499;
+  border-radius: 16rpx;
+  margin-right: 16rpx;
+}
+.filter-item.data-v-79e6a490:last-child {
+  margin-right: 0;
+}
+.filter-item.active.data-v-79e6a490 {
+  background: #3D7EFF;
+  color: #fff;
+}
+.settings-section.data-v-79e6a490 {
+  margin: 30rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 0 30rpx;
+  box-shadow: 0 12rpx 24rpx rgba(17, 32, 64, 0.04);
+  position: relative;
+  /* 确保子元素的绝对定位基于此容器 */
+}
+.settings-item.data-v-79e6a490 {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+}
+.settings-text.data-v-79e6a490 {
+  flex: 1;
+  font-size: 28rpx;
+  color: #111;
+  margin-left: 20rpx;
+}
+.list.data-v-79e6a490 {
+  height: calc(100vh - 520rpx);
+  padding: 0 30rpx;
+}
+.empty.data-v-79e6a490 {
+  padding: 100rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty-image.data-v-79e6a490 {
+  width: 240rpx;
+  height: 240rpx;
+}
+.empty-text.data-v-79e6a490 {
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #7A8499;
+}
+.reservation-card.data-v-79e6a490,
+.payment-card.data-v-79e6a490 {
+  margin-top: 24rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  box-shadow: 0 12rpx 24rpx rgba(17, 32, 64, 0.04);
+}
+.card-header.data-v-79e6a490 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lot-name.data-v-79e6a490,
+.payment-title.data-v-79e6a490 {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #111;
+}
+.amount.data-v-79e6a490 {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #FF5A5F;
+}
+.status.data-v-79e6a490 {
+  font-size: 24rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 16rpx;
+}
+.status.status-confirmed.data-v-79e6a490 {
+  background: rgba(61, 126, 255, 0.12);
+  color: #3D7EFF;
+}
+.status.status-completed.data-v-79e6a490 {
+  background: rgba(82, 196, 26, 0.12);
+  color: #52C41A;
+}
+.status.status-cancelled.data-v-79e6a490 {
+  background: rgba(255, 90, 95, 0.12);
+  color: #FF5A5F;
+}
+.status.status-pending_payment.data-v-79e6a490 {
+  background: rgba(255, 180, 0, 0.12);
+  color: #FFB400;
+}
+.card-body.data-v-79e6a490 {
+  margin-top: 24rpx;
+  padding-top: 24rpx;
+  border-top: 2rpx solid #F0F3FB;
+}
+.row.data-v-79e6a490 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16rpx;
+}
+.row.data-v-79e6a490:first-child {
+  margin-top: 0;
+}
+.label.data-v-79e6a490 {
+  font-size: 26rpx;
+  color: #7A8499;
+}
+.value.data-v-79e6a490 {
+  font-size: 26rpx;
+  color: #111;
+  font-weight: 500;
+}
+.card-footer.data-v-79e6a490 {
+  margin-top: 24rpx;
+  padding-top: 24rpx;
+  border-top: 2rpx solid #F0F3FB;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16rpx;
+}
+.payment-status.data-v-79e6a490 {
+  font-size: 24rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 16rpx;
+}
+.payment-status.payment-success.data-v-79e6a490 {
+  background: rgba(82, 196, 26, 0.12);
+  color: #52C41A;
+}
+.payment-status.payment-pending.data-v-79e6a490 {
+  background: rgba(255, 180, 0, 0.12);
+  color: #FFB400;
+}
+.payment-status.payment-failed.data-v-79e6a490 {
+  background: rgba(255, 90, 95, 0.12);
+  color: #FF5A5F;
+}
+.payment-status.payment-refunded.data-v-79e6a490 {
+  background: rgba(17, 144, 255, 0.12);
+  color: #1890FF;
+}
+.settings-popup.data-v-79e6a490 {
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 24rpx 24rpx 0 0;
+}
+.popup-header.data-v-79e6a490 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.popup-title.data-v-79e6a490 {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #111;
+}
+.settings-list.data-v-79e6a490 {
+  padding: 20rpx 0;
+}
+.settings-item.data-v-79e6a490 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+}
+.settings-item.data-v-79e6a490:not(:last-child) {
+  border-bottom: 2rpx solid #F0F3FB;
+}
+.settings-label.data-v-79e6a490 {
+  font-size: 28rpx;
+  color: #111;
+}
