@@ -34,9 +34,13 @@
         :key="lot.id"
         class="lot-card animate-fade-in"
       >
-        <!-- 第1行：停车场名称 + 距离徽章 -->
+        <!-- 第1行：停车场名称(居中) -->
         <view class="card-row card-title-row">
           <text class="lot-name">{{ lot.name }}</text>
+        </view>
+        
+        <!-- 第1.5行：距离标签(居中) -->
+        <view class="card-row distance-row">
           <view class="distance-badge">
             <text>{{ formatDistance(lot.distance) }}</text>
           </view>
@@ -58,30 +62,30 @@
           </view>
         </view>
 
-        <!-- 第3行：营业时间（优化图标） -->
-        <view class="card-row info-row">
-          <view class="info-item">
-            <text class="info-label">🕐营业时间</text>
-            <text class="info-value highlight">{{ lot.businessHours }}</text>
+        <!-- 第3行：营业时间(垂直布局) -->
+        <view class="card-row business-hours-row">
+          <view class="icon-row">
+            <text class="icon">🕐</text>
+            <text class="label">营业时间</text>
+          </view>
+          <text class="hours-text">{{ lot.businessHours }}</text>
+        </view>
+
+        <!-- 第4行：剩余车位(垂直居中布局) -->
+        <view class="card-row quota-row">
+          <view class="icon-row">
+            <text class="icon">🅿️</text>
+            <text class="label">剩余车位</text>
+          </view>
+          <view class="quota-badge">
+            <text class="quota-num">{{ lot.availableQuota }}个</text>
           </view>
         </view>
 
-        <!-- 第4行：实时剩余车位（绿色突出） -->
-        <view class="card-row info-row">
-          <view class="info-item quota-item">
-            <text class="info-label">🅿️剩余车位</text>
-            <view class="quota-badge">
-              <text class="quota-num">{{ lot.availableQuota }}<text class="quota-num">个</text></text>
-            </view>
-          </view>
-        </view>
-
-        <!-- 第5行：收费行（仅保留定金说明） -->
-        <view class="card-row pricing-row">
-          <view class="info-item">
-            <text class="info-label">预约定金</text>
-            <text class="info-value highlight">7天内¥5 / 7天以上¥10</text>
-          </view>
+        <!-- 第5行：预约定金(垂直布局) -->
+        <view class="card-row deposit-row">
+          <text class="deposit-label">预约定金</text>
+          <text class="deposit-value">7天内¥5 / 7天以上¥10</text>
         </view>
 
         <!-- 第6行：预约按钮 -->
@@ -93,8 +97,10 @@
               width: '100%',
               background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', 
               border: 'none',
-              borderRadius: '12rpx',
-              height: '80rpx'
+              borderRadius: '50rpx',
+              height: '88rpx',
+              fontSize: '32rpx',
+              fontWeight: '600'
             }"
             @click.stop="goReserve(lot.id)"
           >
@@ -374,10 +380,8 @@ export default {
 .lot-list {
   margin-top: var(--spacing-md);
   height: calc(100vh - 360rpx);
-  padding: 0 var(--spacing-lg);
+  padding: 0;
   width: 100%;
-  max-width: 720rpx;
-  box-sizing: border-box;
 }
 
 .location-row {
@@ -776,12 +780,11 @@ export default {
 
 // 重构后的卡片样式
 .lot-card {
-  margin: 20rpx auto;
-  width: calc(100% - 32rpx);
-  max-width: 700rpx;
+  margin: 48rpx 48rpx;
+  width: calc(100% - 96rpx);
   background: #fff;
   border-radius: 16rpx;
-  padding: 0;
+  padding: 24rpx;
   box-shadow: 0 4rpx 16rpx rgba(102,126,234,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
@@ -794,41 +797,47 @@ export default {
 
 // 卡片行通用样式
 .card-row {
-  padding: 20rpx 24rpx;
+  margin-bottom: 16rpx;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-// 第1行：标题行
+// 第1行：标题行(居中)
 .card-title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 16rpx;
-  border-bottom: 1rpx solid #F0F3FB;
+  text-align: center;
+  padding: 0 0 12rpx 0;
 }
 
 .lot-name {
-  font-size: 32rpx;
+  font-size: 34rpx;
   font-weight: 700;
   color: #1a1a1a;
-  flex: 1;
-  padding-right: 16rpx;
+}
+
+// 第1.5行：距离标签行(居中)
+.distance-row {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 16rpx;
 }
 
 .distance-badge {
   background: linear-gradient(135deg, #32caec 0%, #2db3d8 100%);
-  padding: 8rpx 18rpx;
-  border-radius: 20rpx;
+  padding: 10rpx 24rpx;
+  border-radius: 30rpx;
   font-size: 24rpx;
   color: #fff;
   font-weight: 600;
-  white-space: nowrap;
-  box-shadow: 0 6rpx 16rpx rgba(102,126,234,0.12);
 }
 
 // 第2行：地图缩略图
 .map-thumbnail {
   position: relative;
   padding: 0;
+  margin: 0 -24rpx 16rpx -24rpx;
   height: 180rpx;
   background: #f5f7fa;
 }
@@ -865,115 +874,86 @@ export default {
   overflow: hidden;
 }
 
-// 第3、4行：信息行
-.info-row {
-  padding: 14rpx 24rpx;
-  border-bottom: 1rpx solid #F6F8FB;
+// 第3行：营业时间行
+.business-hours-row {
+  padding: 0;
+  text-align: center;
 }
 
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 12rpx;
-}
-
-.info-icon {
-  font-size: 36rpx;
-}
-
-.info-label {
-  font-size: 26rpx;
-  color: #7A8499;
-  min-width: 120rpx;
-}
-
-.info-value {
-  font-size: 26rpx;
-  color: #333;
-  font-weight: 500;
-  
-  &.highlight {
-    color: #667eea;
-    font-weight: 600;
-  }
-}
-
-// 车位特殊样式
-.quota-item {
-  justify-content: space-between;
-}
-
-
-.quota-badge {
+.icon-row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8rpx;
-  background: transparent;
-  color: #000;
-  min-width: 140rpx;
-  height: 64rpx;
-  padding: 0 16rpx;
-  border-radius: 10rpx;
-  border: 2rpx solid #000;
-  box-shadow: none;
-  transform-origin: center;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-  animation: popIn 420ms cubic-bezier(.2,.9,.3,1);
-  white-space: nowrap;
+  margin-bottom: 8rpx;
 }
 
+.icon {
+  font-size: 32rpx;
+}
+
+.label {
+  font-size: 26rpx;
+  color: #7A8499;
+}
+
+.hours-text {
+  display: block;
+  font-size: 32rpx;
+  color: #5B8FF9;
+  font-weight: 600;
+}
+
+// 第4行：剩余车位行
+.quota-row {
+  padding: 0;
+  text-align: center;
+}
+
+.quota-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12rpx;
+  background: #F5F5F5;
+  color: #000;
+  min-width: 160rpx;
+  height: 72rpx;
+  padding: 0 24rpx;
+  border-radius: 12rpx;
+  border: 2rpx solid #E0E0E0;
+}
 
 .quota-num {
-  font-size: 32rpx;
+  font-size: 40rpx;
   font-weight: 700;
-  color: #000000;
-  line-height: 1;
-  display: inline-block;
+  color: #000;
 }
 
-// 第5行：收费行
-.pricing-row {
-  display: flex;
-  align-items: center;
-  gap: 20rpx;
-  background: #F9FAFB;
-  padding: 18rpx 24rpx;
+// 第5行：预约定金行
+.deposit-row {
+  padding: 0;
+  text-align: center;
 }
 
-// .pricing-item {
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 4rpx;
-// }
-
-// .pricing-label {
-//   font-size: 22rpx;
-//   color: #7A8499;
-// }
-
-.pricing-value {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #FF5A5F;
+.deposit-label {
+  display: block;
+  font-size: 26rpx;
+  color: #7A8499;
+  margin-bottom: 8rpx;
 }
 
-.pricing-sub {
-  font-size: 28rpx;
-  color: #999;
-  line-height: 1.4;
-}
-
-.pricing-divider {
-  width: 2rpx;
-  height: 60rpx;
-  background: #E5E7EB;
+.deposit-value {
+  display: block;
+  font-size: 30rpx;
+  color: #5B8FF9;
+  font-weight: 600;
 }
 
 // 第6行：按钮行
 .action-row {
-  padding: 20rpx 24rpx 24rpx;
+  padding: 0;
+  margin-top: 20rpx;
 }
 
 // 动画效果

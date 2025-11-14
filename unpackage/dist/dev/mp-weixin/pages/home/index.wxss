@@ -1021,10 +1021,8 @@ to {
 .lot-list.data-v-4978fed5 {
   margin-top: var(--spacing-md);
   height: calc(100vh - 360rpx);
-  padding: 0 var(--spacing-lg);
+  padding: 0;
   width: 100%;
-  max-width: 720rpx;
-  box-sizing: border-box;
 }
 .location-row.data-v-4978fed5 {
   display: flex;
@@ -1357,12 +1355,11 @@ to {
   box-shadow: 0 4rpx 12rpx rgba(17, 32, 64, 0.04);
 }
 .lot-card.data-v-4978fed5 {
-  margin: 20rpx auto;
-  width: calc(100% - 32rpx);
-  max-width: 700rpx;
+  margin: 48rpx 48rpx;
+  width: calc(100% - 96rpx);
   background: #fff;
   border-radius: 16rpx;
-  padding: 0;
+  padding: 24rpx;
   box-shadow: 0 4rpx 16rpx rgba(102, 126, 234, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
@@ -1372,35 +1369,38 @@ to {
   box-shadow: 0 8rpx 24rpx rgba(102, 126, 234, 0.12);
 }
 .card-row.data-v-4978fed5 {
-  padding: 20rpx 24rpx;
+  margin-bottom: 16rpx;
+}
+.card-row.data-v-4978fed5:last-child {
+  margin-bottom: 0;
 }
 .card-title-row.data-v-4978fed5 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 16rpx;
-  border-bottom: 1rpx solid #F0F3FB;
+  text-align: center;
+  padding: 0 0 12rpx 0;
 }
 .lot-name.data-v-4978fed5 {
-  font-size: 32rpx;
+  font-size: 34rpx;
   font-weight: 700;
   color: #1a1a1a;
-  flex: 1;
-  padding-right: 16rpx;
+}
+.distance-row.data-v-4978fed5 {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 16rpx;
 }
 .distance-badge.data-v-4978fed5 {
   background: linear-gradient(135deg, #32caec 0%, #2db3d8 100%);
-  padding: 8rpx 18rpx;
-  border-radius: 20rpx;
+  padding: 10rpx 24rpx;
+  border-radius: 30rpx;
   font-size: 24rpx;
   color: #fff;
   font-weight: 600;
-  white-space: nowrap;
-  box-shadow: 0 6rpx 16rpx rgba(102, 126, 234, 0.12);
 }
 .map-thumbnail.data-v-4978fed5 {
   position: relative;
   padding: 0;
+  margin: 0 -24rpx 16rpx -24rpx;
   height: 180rpx;
   background: #f5f7fa;
 }
@@ -1432,84 +1432,71 @@ to {
   white-space: nowrap;
   overflow: hidden;
 }
-.info-row.data-v-4978fed5 {
-  padding: 14rpx 24rpx;
-  border-bottom: 1rpx solid #F6F8FB;
+.business-hours-row.data-v-4978fed5 {
+  padding: 0;
+  text-align: center;
 }
-.info-item.data-v-4978fed5 {
-  display: flex;
-  align-items: center;
-  gap: 12rpx;
-}
-.info-icon.data-v-4978fed5 {
-  font-size: 36rpx;
-}
-.info-label.data-v-4978fed5 {
-  font-size: 26rpx;
-  color: #7A8499;
-  min-width: 120rpx;
-}
-.info-value.data-v-4978fed5 {
-  font-size: 26rpx;
-  color: #333;
-  font-weight: 500;
-}
-.info-value.highlight.data-v-4978fed5 {
-  color: #667eea;
-  font-weight: 600;
-}
-.quota-item.data-v-4978fed5 {
-  justify-content: space-between;
-}
-.quota-badge.data-v-4978fed5 {
+.icon-row.data-v-4978fed5 {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8rpx;
-  background: transparent;
+  margin-bottom: 8rpx;
+}
+.icon.data-v-4978fed5 {
+  font-size: 32rpx;
+}
+.label.data-v-4978fed5 {
+  font-size: 26rpx;
+  color: #7A8499;
+}
+.hours-text.data-v-4978fed5 {
+  display: block;
+  font-size: 32rpx;
+  color: #5B8FF9;
+  font-weight: 600;
+}
+.quota-row.data-v-4978fed5 {
+  padding: 0;
+  text-align: center;
+}
+.quota-badge.data-v-4978fed5 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12rpx;
+  background: #F5F5F5;
   color: #000;
-  min-width: 140rpx;
-  height: 64rpx;
-  padding: 0 16rpx;
-  border-radius: 10rpx;
-  border: 2rpx solid #000;
-  box-shadow: none;
-  transform-origin: center;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-  animation: popIn-4978fed5 420ms cubic-bezier(0.2, 0.9, 0.3, 1);
-  white-space: nowrap;
+  min-width: 160rpx;
+  height: 72rpx;
+  padding: 0 24rpx;
+  border-radius: 12rpx;
+  border: 2rpx solid #E0E0E0;
 }
 .quota-num.data-v-4978fed5 {
-  font-size: 32rpx;
+  font-size: 40rpx;
   font-weight: 700;
-  color: #000000;
-  line-height: 1;
-  display: inline-block;
+  color: #000;
 }
-.pricing-row.data-v-4978fed5 {
-  display: flex;
-  align-items: center;
-  gap: 20rpx;
-  background: #F9FAFB;
-  padding: 18rpx 24rpx;
+.deposit-row.data-v-4978fed5 {
+  padding: 0;
+  text-align: center;
 }
-.pricing-value.data-v-4978fed5 {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #FF5A5F;
+.deposit-label.data-v-4978fed5 {
+  display: block;
+  font-size: 26rpx;
+  color: #7A8499;
+  margin-bottom: 8rpx;
 }
-.pricing-sub.data-v-4978fed5 {
-  font-size: 28rpx;
-  color: #999;
-  line-height: 1.4;
-}
-.pricing-divider.data-v-4978fed5 {
-  width: 2rpx;
-  height: 60rpx;
-  background: #E5E7EB;
+.deposit-value.data-v-4978fed5 {
+  display: block;
+  font-size: 30rpx;
+  color: #5B8FF9;
+  font-weight: 600;
 }
 .action-row.data-v-4978fed5 {
-  padding: 20rpx 24rpx 24rpx;
+  padding: 0;
+  margin-top: 20rpx;
 }
 @keyframes slideInDown-4978fed5 {
 from {

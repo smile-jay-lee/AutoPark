@@ -286,8 +286,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         width: "100%",
         background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         border: "none",
-        borderRadius: "12rpx",
-        height: "80rpx"
+        borderRadius: "50rpx",
+        height: "88rpx",
+        fontSize: "32rpx",
+        fontWeight: "600"
       }
     }),
     k: $data.refresherTriggered,
