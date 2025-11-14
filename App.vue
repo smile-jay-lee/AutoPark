@@ -13,10 +13,11 @@
 
 <style lang="scss">
 	/*每个页面公共css */
-	@import "@/uni_modules/uview-ui/index.scss";
+	@import "uview-plus/index.scss";
 	@import "@/styles/global.scss";
 	
-	*,view,navigator {
+	/* 全局重置 - 移除通配符选择器以兼容小程序 */
+	page, view, navigator, text, image, button, input {
 		box-sizing: border-box;
 	}
 	.warp {
